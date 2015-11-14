@@ -4,6 +4,9 @@
         <variable
             name="user"
             type="c.mars.mvvm.User" />
+        <variable
+            name="handler"
+            type="c.mars.mvvm.Handler"/>
     </data>
 
     <RelativeLayout
@@ -11,14 +14,15 @@
         android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerInParent="true">
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{user.firstName}"/>
+            android:text="@{user.firstName}"
+            android:onClick="@{user.active ? handler.like : handler.dislike}"/>
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user.lastName}"/>
